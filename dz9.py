@@ -22,6 +22,9 @@ class Basket:
             print(f'{goods[0].name} x {goods[1]} = {goods[0].price * goods[1]} руб')
         print(f'ИТОГО: {self.fin_price} руб')
 
+    def buy(self):
+        pass
+
 class Goods:
     def __init__(self, price, name, amount):
         self.price = price
