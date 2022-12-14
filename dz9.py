@@ -18,15 +18,20 @@ class Basket:
                     goods[1] -= amount
 
     def see_check(self):
+        print('ЧЕК:')
         for goods in self.goods_list:
             print(f'{goods[0].name} x {goods[1]} = {goods[0].price * goods[1]} руб')
         print(f'ИТОГО: {self.fin_price} руб')
+
+    def clear_basket(self):
+        self.goods_list.clear()
+        self.fin_price = 0
 
     def buy(self):
         pass
 
 class Goods:
-    def __init__(self, price, name, amount):
+    def __init__(self, price, name: str, amount):
         self.price = price
         self.name = name
         self.amount = amount
@@ -52,9 +57,24 @@ class Draft_drinks(Goods):
     def __init__(self, price, name, volume):
         super().__init__(price, name, volume)
 
-cookie = Goods(79, 'Юбилейное', 500)
-cucumber = Vegetables(100, 'Короткоплодные огурцы', 1000)
-beer = Draft_drinks(80, 'Пиво светлое разливное', 200)
+
+def check_input():
+
+    while 1:
+        try:
+            input_str = float(input('Введите цену товара \n'))
+            break
+        except (ValueError, TypeError) as e:
+            print('Ошибка типов данных', e)
+
+    return input_str
+
+input_string = check_input()
+cookie = Goods(input_string , 'юбилейное', 500)
+input_string = check_input()
+cucumber = Vegetables(input_string , 'Короткоплодные огурцы', 1000)
+input_string = check_input()
+beer = Draft_drinks(input_string , 'Пиво светлое разливное', 200)
 
 basket1 = Basket()
 cookie.put_in_basket(basket1, 1)
