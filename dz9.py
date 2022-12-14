@@ -58,22 +58,22 @@ class Draft_drinks(Goods):
         super().__init__(price, name, volume)
 
 
-def check_input():
+def check_input(message):
 
     while 1:
         try:
-            input_str = float(input('Введите цену товара \n'))
+            input_str = float(input(message))
             break
         except (ValueError, TypeError) as e:
             print('Ошибка типов данных', e)
 
     return input_str
 
-input_string = check_input()
+input_string = check_input('Введите цену печенек: ')
 cookie = Goods(input_string , 'юбилейное', 500)
-input_string = check_input()
+input_string = check_input('Введите цену огурцов: ')
 cucumber = Vegetables(input_string , 'Короткоплодные огурцы', 1000)
-input_string = check_input()
+input_string = check_input('Введите цену разливного пива: ')
 beer = Draft_drinks(input_string , 'Пиво светлое разливное', 200)
 
 basket1 = Basket()
