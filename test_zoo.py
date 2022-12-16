@@ -30,7 +30,6 @@ import pytest
 )
 
 def test_add_animal(n, expected):
-    assert dz8.cage1.add_animal(n) == expected
 
-def test_add_animal(n, expected):
+    assert dz8.cage1.add_animal(n) == expected
     assert dz8.cage2.add_animal(n) == expected
