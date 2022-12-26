@@ -5,10 +5,6 @@ sql = sqlite3.connect('system_of_orders.db')
 
 #Таблица сотрудников
 
-idemp = [
-
-]
-
 emp_df = pd.DataFrame(
     [[1,'','','','0000-00-00','NULL'],
     [38457,'Поляков','Вадим','Борисович','1948-08-23','NULL'],
